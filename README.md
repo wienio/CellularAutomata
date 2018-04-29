@@ -1,5 +1,7 @@
-Basic version of cellular automata - Game of Life.\
+##Cellular Automata
+
+Basic version of cellular automata - _Game of Life_**.\
 Processing 2+ library was used to create GUI.
 
-**https://processing.org/**
+[PROCESSING](https://processing.org/)
 

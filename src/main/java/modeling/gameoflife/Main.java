@@ -1,4 +1,4 @@
-package com.modeling.gameoflife;
+package modeling.gameoflife;
 
 import processing.core.PApplet;
 
@@ -22,6 +22,7 @@ public class Main extends PApplet {
                 rect(20 * i, 20 * j, 20, 20);
             }
         }
+        System.out.println("Click on cell to add status ALIVE, ENTER will start the game!");
     }
 
     public void draw() {
@@ -42,8 +43,8 @@ public class Main extends PApplet {
 
                 game.getCells()[y / 20][x / 20].setState(1);
 
-                noStroke();
                 fill(255, 255, 0);
+                noStroke();
                 rect(x - x % 20 + 1, y - y % 20 + 1, 19, 19);
             }
 
@@ -68,7 +69,7 @@ public class Main extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("com.modeling.gameoflife.Main");
+        PApplet.main("modeling.gameoflife.Main");
     }
 
 }

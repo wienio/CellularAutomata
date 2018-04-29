@@ -1,4 +1,4 @@
-package com.modeling.cellularautomation;
+package modeling.cellularautomata;
 
 import processing.core.PApplet;
 
@@ -18,7 +18,7 @@ public class Main extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("com.modeling.cellularautomation.Main");
+        PApplet.main("modeling.cellularautomata.Main");
     }
 
     private static void setMatrixToStarterPosition() {
@@ -38,7 +38,7 @@ public class Main extends PApplet {
 
     public void draw() {
         Scanner in = new Scanner(System.in);
-        System.out.print("Podaj wartosc zasady: ");
+        System.out.print("Please write rule no.: ");
         int rule = in.nextInt();
         setMatrixToStarterPosition();
         calcMatrixRule(rule);

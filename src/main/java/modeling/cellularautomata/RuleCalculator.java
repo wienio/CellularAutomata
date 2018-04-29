@@ -1,4 +1,4 @@
-package com.modeling.cellularautomation;
+package modeling.cellularautomata;
 
 /**
  * Created by Wienio on 2018-04-24.

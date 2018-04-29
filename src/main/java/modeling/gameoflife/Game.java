@@ -1,7 +1,7 @@
-package com.modeling.gameoflife;
+package modeling.gameoflife;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Wienio on 2018-04-26.
@@ -9,7 +9,7 @@ import java.util.List;
 public class Game {
 
     private Cell[][] cells = new Cell[35][50];
-    private List<Cell> newCells = new ArrayList<Cell>();
+    private Map<Cell, Integer> cellsToUpdate = new HashMap<>();
 
     public void checkNeighbours() {
         int startY, endY, startX, endX;
@@ -32,22 +32,20 @@ public class Game {
                     }
                 }
                 if (counter < 2 || counter > 3) {
-                    newCells.add(new Cell(cells[i][j]));
-                    newCells.get(newCells.size() - 1).setState(0);
+                    cellsToUpdate.put(cells[i][j], 0);
                 } else if (counter == 3) {
-                    newCells.add(new Cell(cells[i][j]));
-                    newCells.get(newCells.size() - 1).setState(1);
+                    cellsToUpdate.put(cells[i][j], 1);
                 }
             }
         }
     }
 
     public void update() {
-        for (Cell cell : newCells) {
-            cells[cell.getPositionY()][cell.getPositionX()].setState(cell.getState());
+        for (Map.Entry<Cell, Integer> entry : cellsToUpdate.entrySet()) {
+            entry.getKey().setState(entry.getValue());
         }
 
-        newCells.clear();
+        cellsToUpdate.clear();
     }
 
     public Game() {
